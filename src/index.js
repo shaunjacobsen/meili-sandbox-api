@@ -51,7 +51,7 @@ app.get('/search', async (req, res) => {
         recommending_users: idx % 4 ? [] : [RECOMMMENDING_USER],
       };
     });
-    return res.json(formattedData);
+    return res.json({ items: formattedData });
   } catch (e) {
     return res.status(400).json(e.message);
   }
