@@ -85,7 +85,7 @@ app.get('/localities', async (req, res) => {
         name: feature.text,
         full_name: feature.place_name,
         bbox: feature.bbox,
-        center: feature.center,
+        center: { latitude: feature.center[1], longitude: feature.center[0] },
         context: getContextData(feature.context),
       };
     });
