@@ -89,7 +89,7 @@ app.get('/localities', async (req, res) => {
         context: getContextData(feature.context),
       };
     });
-    return res.json(features);
+    return res.json({ items: features });
   } catch (e) {
     return res.status(400).json(e.message);
   }
